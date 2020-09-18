@@ -1,0 +1,133 @@
+$heading: rgb(32, 34, 48);
+$body-background: rgb(236, 232, 232);
+
+@mixin flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    background: $body-background;
+    padding: 0 2rem;
+}
+.heading {
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    @include flex(row, center, center);
+    color: $heading;
+}
+.recipeContainer {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+}
+.recipe {
+    width: 880px;
+    min-height: 320px;
+    @include flex(row, stretch, flex-start);
+    background: white;
+    margin: 2rem;
+    border-radius: 0.7rem;
+
+    &__image {
+        width: auto;
+        min-height: 320px;
+        border-radius: 0.7rem 0 0 0.7rem;
+    }
+    &__content {
+        padding: 1rem 1rem 1rem 1.5rem;
+        height: auto;
+        @include flex(column, flex-start, space-evenly);
+
+        &__title {
+            font-size: 27px;
+            font-weight: 600;
+            color: $heading;
+            margin: 0;
+            padding-bottom: 1rem;
+        }
+        &__list {
+            margin: 0;
+            padding-left: 1.2rem;
+            li {
+                list-style-type: none;
+                position: relative;
+                padding: 0.2rem 0;
+                padding-left: 10px;
+
+                &:before {
+                    content: "\25BA \0020";
+                    font-size: 7px;
+                    position: absolute;
+                    top: 5px;
+                    left: -10px;
+                }
+            }
+        }
+        &__link {
+        padding: 0.5rem 1rem;
+        margin: 0.6rem 0;
+        background-image: linear-gradient(to right, #0151ffe1, #011affb7);
+        color: white;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+@media only screen and (max-width: 850px) {
+    .recipe {
+        @include flex(column, stretch, flex-start);
+        
+        &__image{
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem 1rem 0 0;
+        }
+        &__content {
+
+            @include flex(column, stretch, space-evenly);
+            &__title{
+                @include flex(row,center , center);
+            }
+            &__link {
+                padding: 0.5rem 1rem;
+                margin: 1rem auto;
+                width: 5.5rem;
+                }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+        body{
+            padding: .5rem;
+        }    
+        .heading{
+            font-size: 25px;
+        }
+        .recipe{
+            margin: 1rem;
+            border-radius: .5rem;
+            
+            &__image{
+                border-radius: .5rem .5rem 0 0;
+            }
+
+            &__content {
+                padding: .7rem;
+                @include flex(column, stretch, space-evenly);
+                &__title{
+                    @include flex(row,center , center);
+                    font-size: 24px;
+                }
+            }
+        }
+  }
