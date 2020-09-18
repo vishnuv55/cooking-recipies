@@ -1,4 +1,4 @@
-@import './App.scss';
+@import "./App.scss";
 .search {
     @include flex(row, center, center);
 
@@ -9,7 +9,7 @@
         padding: 0.4rem;
         margin: 0.6rem;
         font-size: 1rem;
-        border-image-source: linear-gradient(to right, #01a2ff, #3501FF);
+        border-image-source: linear-gradient(to right, #01a2ff, #3501ff);
         border-width: 2px;
         border-image-slice: 1;
         background: rgb(239, 240, 243);
@@ -24,16 +24,16 @@
         color: white;
         border: none;
         border-radius: 3px;
-        &:focus{
+        &:focus {
             outline: none;
         }
     }
 }
 @media only screen and (max-width: 600px) {
-    .search{
+    .search {
         @include flex(column, center, center);
 
-        &__input{
+        &__input {
             width: 85vw;
         }
     }

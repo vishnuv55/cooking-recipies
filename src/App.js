@@ -37,7 +37,7 @@ const App = () => {
 
     return (
         <div>
-            <h2 className="heading">Recipies Online</h2>
+            <h2 className="heading">Recipes Online</h2>
             <Form
                 search={search}
                 onChange={updateSearch}
