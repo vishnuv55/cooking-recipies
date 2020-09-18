@@ -1,5 +1,5 @@
-$heading: rgb(32, 34, 48);
-$body-background: rgb(236, 232, 232);
+$heading: rgba(19, 11, 138, 0.836);
+$body-background: rgb(224, 224, 241);
 
 @mixin flex($direction, $align, $justify) {
     display: flex;
